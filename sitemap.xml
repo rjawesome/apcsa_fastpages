@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://rjawesome.github.io/apcsa_fastpages/markdown/2020/01/14/test-markdown-post.html</loc>
-<lastmod>2020-01-14T00:00:00-06:00</lastmod>
-</url>
-<url>
 <loc>https://rjawesome.github.io/apcsa_fastpages/jupyter/2020/02/20/test.html</loc>
 <lastmod>2020-02-20T00:00:00-06:00</lastmod>
 </url>
 <url>
-<loc>https://rjawesome.github.io/apcsa_fastpages/2022/08/19/java.html</loc>
+<loc>https://rjawesome.github.io/apcsa_fastpages/fastpages/jupyter/2022/08/19/java.html</loc>
 <lastmod>2022-08-19T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://rjawesome.github.io/apcsa_fastpages/2022/08/19/javascript.html</loc>
+<loc>https://rjawesome.github.io/apcsa_fastpages/markdown/2022/08/19/markdown-post.html</loc>
 <lastmod>2022-08-19T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://rjawesome.github.io/apcsa_fastpages/2022/08/19/python.html</loc>
+<loc>https://rjawesome.github.io/apcsa_fastpages/fastpages/jupyter/2022/08/19/python.html</loc>
 <lastmod>2022-08-19T00:00:00-05:00</lastmod>
 </url>
 <url>
