@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Java Jupyter Notebook",
-            "content": "public class Printer { private String value; public Printer (String value) { this.value = value; } public void print() { System.out.println(value); } } . Printer helloPrinter = new Printer(&quot;hello&quot;); helloPrinter.print(); . hello .",
+            "content": "//Class can print a specific value public class Printer { private String value; //takes in value to print public Printer (String value) { this.value = value; } //prints the value public void print() { System.out.println(value); } //tests the class by printing hello and hello world public static void main (String[] args) { Printer helloPrinter = new Printer(&quot;hello&quot;); helloPrinter.print(); Printer helloWorldPrinter = new Printer(&quot;hello world&quot;); helloWorldPrinter.print(); } } . // use main method from Printer Printer.main(null); /* expected output: * hello * hello world */ . hello hello world .",
             "url": "https://rjawesome.github.io/apcsa_fastpages/fastpages/jupyter/2022/08/19/java.html",
             "relUrl": "/fastpages/jupyter/2022/08/19/java.html",
             "date": " • Aug 19, 2022"

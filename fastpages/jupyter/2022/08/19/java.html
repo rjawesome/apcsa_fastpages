@@ -146,13 +146,27 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Printer</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//Class can print a specific value</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Printer</span> <span class="p">{</span>
   <span class="kd">private</span> <span class="n">String</span> <span class="n">value</span><span class="p">;</span>
+
+  <span class="c1">//takes in value to print</span>
   <span class="kd">public</span> <span class="nf">Printer</span> <span class="p">(</span><span class="n">String</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
   <span class="p">}</span>
+
+  <span class="c1">//prints the value</span>
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">//tests the class by printing hello and hello world</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Printer</span> <span class="n">helloPrinter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Printer</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+    <span class="n">helloPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="n">Printer</span> <span class="n">helloWorldPrinter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Printer</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
+    <span class="n">helloWorldPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -171,8 +185,12 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">Printer</span> <span class="n">helloPrinter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Printer</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
-<span class="n">helloPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// use main method from Printer</span>
+<span class="n">Printer</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="cm">/* expected output:</span>
+<span class="cm"> * hello</span>
+<span class="cm"> * hello world</span>
+<span class="cm"> */</span>
 </pre></div>
 
     </div>
@@ -186,6 +204,7 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>hello
+hello world
 </pre>
 </div>
 </div>
