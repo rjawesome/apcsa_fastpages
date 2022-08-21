@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Java Jupyter Notebook",
-            "content": "System.out.println(&quot;hello&quot;); . hello .",
+            "content": "public class Printer { private String value; public Printer (String value) { this.value = value; } public void print() { System.out.println(value); } } . Printer helloPrinter = new Printer(&quot;hello&quot;); helloPrinter.print(); . hello .",
             "url": "https://rjawesome.github.io/apcsa_fastpages/fastpages/jupyter/2022/08/19/java.html",
             "relUrl": "/fastpages/jupyter/2022/08/19/java.html",
             "date": " • Aug 19, 2022"
