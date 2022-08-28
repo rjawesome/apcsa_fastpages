@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -206,6 +206,26 @@ window.onload = wrap_img;
   unzip ijava-1.3.0.zip
   python3 install.py --user
 <span class="k">fi</span>
+
+<span class="c1">#create vscode directory if necessary</span>
+<span class="k">if</span> <span class="o">[[</span> ! -d ~/vscode <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Creating vscode directory&quot;</span>
+  mkdir vscode
+<span class="k">fi</span>
+
+<span class="c1">#clone APCSA repository if necessary</span>
+<span class="k">if</span> <span class="o">[[</span> ! -d ~/vscode/APCSA <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Cloning APCSA repository&quot;</span>
+  <span class="nb">cd</span> vscode
+  git clone https://github.com/nighthawkcoders/APCSA <span class="m">2</span>&gt;/dev/null
+  <span class="nb">cd</span> ..
+<span class="k">fi</span>
+
+<span class="c1">#update APCSA repository</span>
+<span class="nb">echo</span> <span class="s2">&quot;Updating APCSA repository&quot;</span>
+<span class="nb">cd</span> vscode/APCSA
+git pull <span class="m">2</span>&gt;/dev/null
+<span class="nb">cd</span> ../..
 </pre></div>
 
     </div>
@@ -226,6 +246,9 @@ Java installed with Version 11 or Better
 Jupyter installed
 Bash Kernel Installed
 Java Kernel Installed
+Cloning APCSA repository
+Updating APCSA repository
+Already up-to-date.
 </pre>
 </div>
 </div>
