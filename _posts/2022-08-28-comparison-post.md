@@ -8,14 +8,14 @@ title: Why you should use Svelte instead of React?
 ## State management system
 Svelte is a Web Framework which provides an easy to use state management system without the drawbacks of a slow virtual DOM (unlike React and Vue). Additionally, it is very similar to normal HTML/CSS/JS, which means it has less of a learning curve. Svelte uses the .svelte file extension for its files, which are really similar to normal HTML files. If you want to export a javascript variable to your HTML, just export it in a script tag. You can then access it in your HTML by enclosing the variable in curly brackets
 
-```
+```html
 <script>
 export let awesome_var = "Svelte is cool!";
 </script>
 <h1>{ awesome_var }</h1>
 ```
 When you change the variable, your HTML will automatically be updated. No need for unnecessary calls such as setState in React
-```
+```html
 <script>
 export let awesome_var = "Svelte is cool!";
 function editVar () {
@@ -31,7 +31,7 @@ When you press the button, the h1 will automatically update with the new text. I
 ## Slots
 Another feature that svelte provides is slots, which makes it super easy to use and create custom components. Essentially, I can template my component, and then have the consumer of the component fill in the HTML for some of the parts. For instance, let’s say I'm creating a layout component, which has 3 divs. We can then create slots, which would allow the user of the component to specify what to put in those divs. This is what I would put in CustomComponent.svelte.
 
-```
+```html
 <!-- These divs could be styled by the component creator -->
 <div>
   <slot name="div1">
@@ -44,7 +44,7 @@ Another feature that svelte provides is slots, which makes it super easy to use 
 </div>
 ```
 Now, in my app component, I can use this CustomComponent I created by importing it. I can then easily specify what to put in the slots.
-```
+```html
 <script>
 //import CustomComponent
 import CustomComponent from "./CustomComponent.svelte"
@@ -58,7 +58,7 @@ import CustomComponent from "./CustomComponent.svelte"
 
 # CSS
 Additionally, CSS is exactly the same as you would do with a normal HTML file, you would just add a style tag. For instance, here I make all the spans have a background color of red.
-```
+```html
 <style>
 span {
   background-color: red;
