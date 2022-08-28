@@ -127,7 +127,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bash-CSA-Installer">Bash CSA Installer<a class="anchor-link" href="#Bash-CSA-Installer"> </a></h1><p>This program checks for all installations necessary for CSA and installs them if necessary. Also checks for program versions if old versions cause issues (ie. java) and clones/updates the APCSA repository.</p>
+<h1 id="Bash-CSA-Installer">Bash CSA Installer<a class="anchor-link" href="#Bash-CSA-Installer"> </a></h1><p>This program checks for all installations necessary for CSA and installs them if necessary. Also checks for program versions and upgrades if old versions cause issues (ie. java) and clones/updates the APCSA repository.</p>
 
 </div>
 </div>
@@ -141,8 +141,8 @@ window.onload = wrap_img;
 <li><strong>Git Command Line Interface:</strong> In order to use git in my script, I had to use the Git Command Line Interface to update and clone the repository</li>
 <li><strong>Putting command output to files:</strong> Primarily I did not want to clog the output so I put the output from commands I was running into /dev/null</li>
 <li><strong>Piping from one command to another:</strong> A lot of times I had to parse/check the output from a specific command so I had to pipe it to the <code>grep</code> or <code>awk</code> commands</li>
-<li><strong>Variables:</strong> some things such as the java installation took some commands to find so I put it in a variable to simplify the code</li>
-<li><strong>Running commands in Bash Scripts:</strong> In order to conduct installs in the case that packages weren't installed, I had to run commands inside my bash script</li>
+<li><strong>Variables:</strong> Storing data such as version numbers were useful to keep in variables</li>
+<li><strong>Running commands in Bash Scripts:</strong> In order to conduct installs in the case that packages weren't installed, I had to run commands inside my bash script, and I also sometimes had to put results from commands into variables</li>
 </ol>
 
 </div>
@@ -162,7 +162,8 @@ window.onload = wrap_img;
 
 <span class="c1"># check anaconda installation</span>
 <span class="k">if</span> <span class="nb">command</span> -v anaconda &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Anaconda installed&quot;</span>
+  <span class="nv">anaconda_version</span><span class="o">=</span><span class="sb">`</span>conda --version <span class="p">|</span> awk -F <span class="s2">&quot; &quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Anaconda installed (Version </span><span class="nv">$anaconda_version</span><span class="s2">)&quot;</span>
 <span class="k">else</span>
   <span class="nb">echo</span> <span class="s2">&quot;Installing Anaconda&quot;</span>
   wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
@@ -171,7 +172,8 @@ window.onload = wrap_img;
 
 <span class="c1"># check python 3 installation</span>
 <span class="k">if</span> python3 --version <span class="p">|</span> grep <span class="s2">&quot;Python 3&quot;</span> &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Python 3 installed&quot;</span>
+  <span class="nv">python3_version</span><span class="o">=</span><span class="sb">`</span>python3 --version <span class="p">|</span> awk -F <span class="s2">&quot; &quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Python </span><span class="nv">$python3_version</span><span class="s2"> installed&quot;</span>
 <span class="k">else</span>
   <span class="nb">echo</span> <span class="s2">&quot;Installing Python 3&quot;</span>
   sudo apt install python3 python3-pip
@@ -179,7 +181,8 @@ window.onload = wrap_img;
 
 <span class="c1"># check python 2 installation</span>
 <span class="k">if</span> python2 --version <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep <span class="s2">&quot;Python 2&quot;</span> &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Python 2 installed&quot;</span>
+  <span class="nv">python2_version</span><span class="o">=</span><span class="sb">`</span>python2 --version <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> awk -F <span class="s2">&quot; &quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Python </span><span class="nv">$python2_version</span><span class="s2"> installed&quot;</span>
 <span class="k">else</span>
   <span class="nb">echo</span> <span class="s2">&quot;Installing Python 2&quot;</span>
   sudo apt install python2
@@ -188,7 +191,7 @@ window.onload = wrap_img;
 <span class="c1">#check java installation and java version</span>
 <span class="nv">java_version</span><span class="o">=</span><span class="sb">`</span>java --version <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> awk -F <span class="s2">&quot; &quot;</span> <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> awk -F <span class="s2">&quot;.&quot;</span> <span class="s1">&#39;{print $1}&#39;</span><span class="sb">`</span>
 <span class="k">if</span> <span class="o">[[</span> <span class="nv">$java_version</span> -ge <span class="m">11</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Java installed with Version 11 or Better&quot;</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Java installed with Version 11 or Better (Version </span><span class="nv">$java_version</span><span class="s2">)&quot;</span>
 <span class="k">else</span>
   <span class="nb">echo</span> <span class="s2">&quot;Installing Java Version 11 (Version too low or Java not installed)&quot;</span>
   sudo add-apt-repository ppa:openjdk-r/ppa 
@@ -198,7 +201,8 @@ window.onload = wrap_img;
 
 <span class="c1">#check jupyter installation</span>
 <span class="k">if</span> <span class="o">[[</span> -f ~/anaconda3/bin/jupyter  <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;Jupyter installed&quot;</span>
+  <span class="nv">jupyter_version</span><span class="o">=</span><span class="sb">`</span>jupyter --version <span class="p">|</span> grep jupyter_core <span class="p">|</span> awk -F <span class="s2">&quot;: &quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Jupyter installed (Version </span><span class="nv">$jupyter_version</span><span class="s2">)&quot;</span>
 <span class="k">else</span>
   <span class="nb">echo</span> <span class="s2">&quot;Installing jupyter&quot;</span>
   ~/anaconda3/bin/conda install jupyter
