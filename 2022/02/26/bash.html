@@ -128,8 +128,14 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Bash-CSA-Installer">Bash CSA Installer<a class="anchor-link" href="#Bash-CSA-Installer"> </a></h1><p>This program checks for all installations necessary for CSA and installs them if necessary. Also checks for program versions if old versions cause issues (ie. java) and clones/updates the APCSA repository.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>In this script I used many key features of bash which helped me learn a lot about it:</p>
-<ul>
+<ol>
 <li><strong>If statements:</strong> These were necessary to simply check if things were installed</li>
 <li><strong>Checking for files and directories:</strong> I used this in conjunction with if statements to determine if both repositories &amp; programs were installed</li>
 <li><strong>Git Command Line Interface:</strong> In order to use git in my script, I had to use the Git Command Line Interface to update and clone the repository</li>
@@ -137,7 +143,7 @@ window.onload = wrap_img;
 <li><strong>Piping from one command to another:</strong> A lot of times I had to parse/check the output from a specific command so I had to pipe it to the <code>grep</code> or <code>awk</code> commands</li>
 <li><strong>Variables:</strong> some things such as the java installation took some commands to find so I put it in a variable to simplify the code</li>
 <li><strong>Running commands in Bash Scripts:</strong> In order to conduct installs in the case that packages weren't installed, I had to run commands inside my bash script</li>
-</ul>
+</ol>
 
 </div>
 </div>

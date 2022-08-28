@@ -106,20 +106,20 @@ window.onload = wrap_img;
 <a class="anchor" href="#state-management-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>State management system</h2>
 <p>Svelte is a Web Framework which provides an easy to use state management system without the drawbacks of a slow virtual DOM (unlike React and Vue). Additionally, it is very similar to normal HTML/CSS/JS, which means it has less of a learning curve. Svelte uses the .svelte file extension for its files, which are really similar to normal HTML files. If you want to export a javascript variable to your HTML, just export it in a script tag. You can then access it in your HTML by enclosing the variable in curly brackets</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
-export let awesome_var = "Svelte is cool!";
-&lt;/script&gt;
-&lt;h1&gt;{ awesome_var }&lt;/h1&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">awesome_var</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Svelte is cool!</span><span class="dl">"</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;h1&gt;</span>{ awesome_var }<span class="nt">&lt;/h1&gt;</span>
 </code></pre></div></div>
 <p>When you change the variable, your HTML will automatically be updated. No need for unnecessary calls such as setState in React</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
-export let awesome_var = "Svelte is cool!";
-function editVar () {
-  awesome_var = "Svelte is really cool!"
-}
-&lt;/script&gt;
-&lt;h1&gt;{ awesome_var }&lt;/h1&gt;
-&lt;button on:click={editVar}&gt;Make Svelte really cool&lt;/button&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">awesome_var</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Svelte is cool!</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">editVar</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">awesome_var</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Svelte is really cool!</span><span class="dl">"</span>
+<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;h1&gt;</span>{ awesome_var }<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">{editVar}</span><span class="nt">&gt;</span>Make Svelte really cool<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
 <p>When you press the button, the h1 will automatically update with the new text. In addition, you might have noticed that instead of onclick, I used on:click, which is the way Svelte handles events.</p>
@@ -128,37 +128,37 @@ function editVar () {
 <a class="anchor" href="#slots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Slots</h2>
 <p>Another feature that svelte provides is slots, which makes it super easy to use and create custom components. Essentially, I can template my component, and then have the consumer of the component fill in the HTML for some of the parts. For instance, let’s say I’m creating a layout component, which has 3 divs. We can then create slots, which would allow the user of the component to specify what to put in those divs. This is what I would put in CustomComponent.svelte.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- These divs could be styled by the component creator --&gt;
-&lt;div&gt;
-  &lt;slot name="div1"&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;slot name="div2"&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;slot name="div3"&gt;
-&lt;/div&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- These divs could be styled by the component creator --&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"div1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"div2"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"div3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 <p>Now, in my app component, I can use this CustomComponent I created by importing it. I can then easily specify what to put in the slots.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt;
-//import CustomComponent
-import CustomComponent from "./CustomComponent.svelte"
-&lt;/script&gt;
-&lt;CustomComponent&gt;
-  &lt;span slot="div1"&gt;This is the text I want in div1&lt;/span&gt;
-  &lt;span slot="div2"&gt;This is the text I want in div2&lt;/span&gt;
-  &lt;span slot="div3"&gt;This is the text I want in div3&lt;/span&gt;
-&lt;/CustomComponent&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="c1">//import CustomComponent</span>
+<span class="k">import</span> <span class="nx">CustomComponent</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./CustomComponent.svelte</span><span class="dl">"</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;CustomComponent&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">slot=</span><span class="s">"div1"</span><span class="nt">&gt;</span>This is the text I want in div1<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">slot=</span><span class="s">"div2"</span><span class="nt">&gt;</span>This is the text I want in div2<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">slot=</span><span class="s">"div3"</span><span class="nt">&gt;</span>This is the text I want in div3<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/CustomComponent&gt;</span>
 </code></pre></div></div>
 
 <h1 id="css">
 <a class="anchor" href="#css" aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS</h1>
 <p>Additionally, CSS is exactly the same as you would do with a normal HTML file, you would just add a style tag. For instance, here I make all the spans have a background color of red.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style&gt;
-span {
-  background-color: red;
-}
-&lt;/style&gt;
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+<span class="nt">span</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 </code></pre></div></div>
 <p>One thing to note about styles with svelte is that they are shallow. This means if I had some spans in my CustomComponent, the styles I specify in my App component would not apply to those spans.</p>
 
