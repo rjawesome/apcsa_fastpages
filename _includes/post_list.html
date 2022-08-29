@@ -5,7 +5,7 @@
 </h3>
 <div>
   {% for category in post.categories %}
-    <post-category class="{{ category }}">{{ category }}</post-category>
+    <post-category class="{{ category }}"><a class="nostyle" href="{{ site.baseurl }}/categories/#{{ category }}">{{ category }}</a></post-category>
   {% endfor %}
 </div>
 {%- if site.show_description and post.description  -%}
@@ -35,5 +35,13 @@
   }
   .post-link {
     margin-bottom: .2rem;
+  }
+  a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+  }
+  a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
   }
 </style>
