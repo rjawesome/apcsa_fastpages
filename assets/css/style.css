@@ -351,7 +351,7 @@ pre { margin-bottom: 1.5rem !important; }
 
 li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
-li .post-meta-description { color: #585858; font-size: 15px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
+li .post-meta-description { color: #585858; font-size: 15px; margin-top: .2rem !important; margin-bottom: .05rem !important; }
 
 details.description[open] summary::after { content: attr(data-open); }
 
@@ -481,5 +481,7 @@ pre code { font-size: 15px !important; }
 .highlight .gd { color: #ff5555; }
 
 p code { font-size: 19px; }
+
+li .post-meta-description { margin-top: .2rem !important; }
 
 /*# sourceMappingURL=style.css.map */
