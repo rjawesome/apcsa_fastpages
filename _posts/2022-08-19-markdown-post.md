@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: A cool post
-categories: [markdown]
+categories: [setup]
 title: A cool post
 ---
 # This is a very great post

@@ -3,7 +3,37 @@
     {{ post.title | escape }}
     </a>
 </h3>
+<div>
+  {% for category in post.categories %}
+    <post-category class="{{ category }}">{{ category }}</post-category>
+  {% endfor %}
+</div>
 {%- if site.show_description and post.description  -%}
 <p class="post-meta-description">{{ post.description }}</p>
 {%- endif -%}
 <p class="post-meta">{{ post.date | date: date_format }}</p>
+
+<style>
+  post-category {
+    border-radius: .4rem;
+    padding: .25rem;
+  }
+  post-category.cb-unit-1 {
+    background: rgb(0,200,100);
+  }
+  post-category.pbl {
+    background: rgb(50,150,250);
+  }
+  post-category.setup {
+    background: rgb(250,150,150);
+  }
+  post-category.web {
+    background: rgb(250,150,250);
+  }
+  post-category.english {
+    background: rgb(150,150,150);
+  }
+  .post-link {
+    margin-bottom: .2rem;
+  }
+</style>

@@ -1,3 +1,9 @@
 ---
+title: "How vaccination mandates have fared in the past"
 layout: post
+branch: master
+badges: true
+comments: true
+author: Rohan Juneja
+categories: [english]
 ---

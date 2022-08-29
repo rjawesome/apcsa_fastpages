@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: A description of why Svelte is better than React
-categories: [markdown, web]
+categories: [web]
 title: Why you should use Svelte instead of React?
 ---
 ## State management system
@@ -27,6 +27,8 @@ function editVar () {
 ```
 
 When you press the button, the h1 will automatically update with the new text. In addition, you might have noticed that instead of onclick, I used on:click, which is the way Svelte handles events.
+
+![Image of the example]({{ site.baseurl }}/images/svelte-image.png)
 
 ## Slots
 Another feature that svelte provides is slots, which makes it super easy to use and create custom components. Essentially, I can template my component, and then have the consumer of the component fill in the HTML for some of the parts. For instance, let’s say I'm creating a layout component, which has 3 divs. We can then create slots, which would allow the user of the component to specify what to put in those divs. This is what I would put in CustomComponent.svelte.
