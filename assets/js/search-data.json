@@ -82,9 +82,22 @@
   
 
   
-      ,"page1": {
+
+  
+      ,"page2": {
+          "title": "Vocab",
+          "content": "Here I will keep some important CS Vocab . Primitives: A type of data in Java which is basic and does not have any properties/methods (ie int, boolean, double) Wrapper Classes: Classes that allow primitives to be used in places where only classes are allowed such as generics (ie. Integer, Boolean, Double, String) Static vs Dynamic Methods: Static methods are simply called on the class while dynamic methods are called on an INSTANCE of the class (an object) Constructors: These are special methods that are called when an object of a class is created. .",
+          "url": "https://rjawesome.github.io/apcsa_fastpages/vocab/",
+          "relUrl": "/vocab/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
           "title": "About Me",
-          "content": "This website is created by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "Hi, I’m a high school student who loves Programming, Robotics, and CyberSecurity. Check out my app “Hangman Ad Free” on the Play Store. .",
           "url": "https://rjawesome.github.io/apcsa_fastpages/about/",
           "relUrl": "/about/",
           "date": ""
@@ -95,13 +108,8 @@
   
 
   
-  
 
   
-
-  
-  
-
   
 
   
@@ -114,7 +122,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rjawesome.github.io/apcsa_fastpages/robots.txt",
