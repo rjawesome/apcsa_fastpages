@@ -5,5 +5,5 @@ branch: master
 badges: true
 comments: true
 author: Rohan Juneja
-categories: [english]
+categories: [misc]
 ---
