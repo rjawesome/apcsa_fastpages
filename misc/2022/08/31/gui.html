@@ -96,7 +96,11 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#guide-on-how-to-get-gui-on-wsl">Guide on how to get GUI on WSL</a></li>
+<li class="toc-entry toc-h1"><a href="#guide-on-how-to-get-gui-on-wsl">Guide on how to get GUI on WSL</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#note-you-may-need-to-run-xhost-local--restart-vscode">Note: you may need to run xhost +local: &amp; restart VSCode</a></li>
+</ul>
+</li>
 </ul><h1 id="guide-on-how-to-get-gui-on-wsl">
 <a class="anchor" href="#guide-on-how-to-get-gui-on-wsl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Guide on how to get GUI on WSL</h1>
 <ol>
@@ -117,6 +121,13 @@ export LIBGL_ALWAYS_INDIRECT=1
 <img src="/apcsa_fastpages/images/java-icon.png" alt="java_icon">
 </li>
 </ol>
+
+<h2 id="note-you-may-need-to-run-xhost-local--restart-vscode">
+<a class="anchor" href="#note-you-may-need-to-run-xhost-local--restart-vscode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note: you may need to run <code class="language-plaintext highlighter-rouge">xhost +local:</code> &amp; restart VSCode</h2>
+<ul>
+  <li>If you are getting errors about “java.lang.NoClassDefFoundError: Could not initialize class java.awt.GraphicsEnvironment$LocalGE”</li>
+  <li><a href="https://github.com/rycus86/docker-intellij-idea/issues/11">See more details</a></li>
+</ul>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
