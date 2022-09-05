@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Tags | Rohan J’s Blog</title>
+<title>Todo | Rohan J’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Todo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://rjawesome.github.io/apcsa_fastpages/categories/" />
-<meta property="og:url" content="https://rjawesome.github.io/apcsa_fastpages/categories/" />
+<link rel="canonical" href="https://rjawesome.github.io/apcsa_fastpages/todo/" />
+<meta property="og:url" content="https://rjawesome.github.io/apcsa_fastpages/todo/" />
 <meta property="og:site_name" content="Rohan J’s Blog" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags" />
+<meta property="twitter:title" content="Todo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Tags","url":"https://rjawesome.github.io/apcsa_fastpages/categories/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Todo","url":"https://rjawesome.github.io/apcsa_fastpages/todo/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/apcsa_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://rjawesome.github.io/apcsa_fastpages/feed.xml" title="Rohan J's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/apcsa_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,106 +69,51 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post">
 
-<h2>Contents</h2>
+  <header class="post-header">
+    <h1 class="post-title">Todo</h1>
+  </header>
 
-<ul>
+  <div class="post-content">
+    <h1 id="todo-list">Todo List</h1>
 
-<li><a href="#cb">cb</a></li>
+<form id="todo-form">
+<input type="text" placeholder="Todo Name" id="todo-name" />
+<input type="submit" value="Submit" />
+</form>
 
-<li><a href="#misc">misc</a></li>
-
-<li><a href="#pbl">pbl</a></li>
-
-<li><a href="#setup">setup</a></li>
-
-<li><a href="#web">web</a></li>
-
+<ul id="todo-list-ul">
 </ul>
 
-<h3 id="cb"><i class="fas fa-tags category-tags-icon"></i> cb</h3>
-<p><a name="cb"></a></p>
+<script>
+document.getElementById("todo-form").onsubmit = function (event) {
+  event.preventDefault();
+  const name = document.getElementById("todo-name").value;
+  document.getElementById("todo-name").value = "";
+  const todoItem = document.createElement("li");
+  const todoText = document.createTextNode(name);
+  todoItem.appendChild(todoText);
+  todoItem.classList.add("todo-item");
+  todoItem.onclick = function () {
+    document.getElementById("todo-list-ul").removeChild(todoItem);
+  }
+  document.getElementById("todo-list-ul").appendChild(todoItem);
+}
+</script>
 
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/09/01/cricket.html">Cricket Scores GUI</a>  • Sep 1, 2022</p>
+<style>
+.todo-item:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+</style>
+
+
+  </div>
+
 </article>
 
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/08/29/physics-graph.html">Physics Graph</a>  • Aug 29, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/08/28/week-1.html">Week 1 AP CSA</a>  • Aug 28, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/cb/pbl/2022/08/22/primitives.html">Primitives Jupyter Notebook</a>  • Aug 22, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/cb/2022/08/19/java.html">Java Jupyter Notebook</a>  • Aug 19, 2022</p>
-</article>
-
-<h3 id="misc"><i class="fas fa-tags category-tags-icon"></i> misc</h3>
-<p><a name="misc"></a></p>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/misc/2022/08/31/gui.html">GUI with WSL</a>  • Aug 31, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/misc/2022/08/29/alumni.html">AP CS Alumni Panel</a>  • Aug 29, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/misc/2022/08/28/english.html">How vaccination mandates have fared in the past</a>  • Aug 28, 2022</p>
-</article>
-
-<h3 id="pbl"><i class="fas fa-tags category-tags-icon"></i> pbl</h3>
-<p><a name="pbl"></a></p>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/09/01/cricket.html">Cricket Scores GUI</a>  • Sep 1, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/08/29/physics-graph.html">Physics Graph</a>  • Aug 29, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/cb/2022/08/28/week-1.html">Week 1 AP CSA</a>  • Aug 28, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/pbl/2022/08/26/bash.html">Bash Installer/Checker</a>  • Aug 26, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/cb/pbl/2022/08/22/primitives.html">Primitives Jupyter Notebook</a>  • Aug 22, 2022</p>
-</article>
-
-<h3 id="setup"><i class="fas fa-tags category-tags-icon"></i> setup</h3>
-<p><a name="setup"></a></p>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/setup/2022/08/19/python.html">Python Jupyter Notebook</a>  • Aug 19, 2022</p>
-</article>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/setup/2022/08/19/markdown-post.html">A cool post</a>  • Aug 19, 2022</p>
-</article>
-
-<h3 id="web"><i class="fas fa-tags category-tags-icon"></i> web</h3>
-<p><a name="web"></a></p>
-
-<article class="archive-item">
-<p class="post-meta post-meta-title"><a class="page-meta" href="/apcsa_fastpages/web/2022/08/28/comparison-post.html">Why you should use Svelte instead of React?</a>  • Aug 28, 2022</p>
-</article>
-
-
-
-</div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/apcsa_fastpages/"></data>
