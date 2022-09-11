@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>If Statements/Boolean Lesson | Rohan J’s Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="If Statements/Boolean Lesson" />
+<meta name="author" content="Rohan Juneja" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is an interactive lesson with jupyter notebooks teaching if statements and boolean expressions" />
+<meta property="og:description" content="This is an interactive lesson with jupyter notebooks teaching if statements and boolean expressions" />
+<link rel="canonical" href="https://rjawesome.github.io/apcsa_fastpages/cb/2022/09/07/if.html" />
+<meta property="og:url" content="https://rjawesome.github.io/apcsa_fastpages/cb/2022/09/07/if.html" />
+<meta property="og:site_name" content="Rohan J’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-07T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="If Statements/Boolean Lesson" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rohan Juneja"},"dateModified":"2022-09-07T00:00:00-05:00","datePublished":"2022-09-07T00:00:00-05:00","description":"This is an interactive lesson with jupyter notebooks teaching if statements and boolean expressions","headline":"If Statements/Boolean Lesson","mainEntityOfPage":{"@type":"WebPage","@id":"https://rjawesome.github.io/apcsa_fastpages/cb/2022/09/07/if.html"},"url":"https://rjawesome.github.io/apcsa_fastpages/cb/2022/09/07/if.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/apcsa_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://rjawesome.github.io/apcsa_fastpages/feed.xml" title="Rohan J's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/apcsa_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/apcsa_fastpages/">Rohan J&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/apcsa_fastpages/search/">Search</a><a class="page-link" href="/apcsa_fastpages/categories/">Tags</a><a class="page-link" href="/apcsa_fastpages/vocab/">Vocab</a><a class="page-link" href="/apcsa_fastpages/about/">About Me</a><a class="page-link" href="/apcsa_fastpages/todo/">Todo</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">If Statements/Boolean Lesson</h1><p class="page-description">This is an interactive lesson with jupyter notebooks teaching if statements and boolean expressions</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-07T00:00:00-05:00" itemprop="datePublished">
+        Sep 7, 2022
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Rohan Juneja</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/apcsa_fastpages/categories/#cb">cb</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/rjawesome/apcsa_fastpages/tree/master/_notebooks/2022-09-07-if.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/rjawesome/apcsa_fastpages/master?filepath=_notebooks%2F2022-09-07-if.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/rjawesome/apcsa_fastpages/blob/master/_notebooks/2022-09-07-if.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Frjawesome%2Fapcsa_fastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-09-07-if.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Boolean-expressions">Boolean expressions </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-07-if.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Boolean-expressions">
+<a class="anchor" href="#Boolean-expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boolean expressions<a class="anchor-link" href="#Boolean-expressions"> </a>
+</h1>
+<p>Boolean expressions are something that can be TRUE or FALSE</p>
+<p>For example, we can check if two things are equal, greater than eachother or less than eachother. Here I have some examples of how these expresisons could be used in a quiz context. Below I have some equality examples</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">correctAnswer</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user1Answer</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user2Answer</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+<span class="c1">//Check if user 1's answer was equal to the correct answeer</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is user 1 right?"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">);</span>
+
+<span class="c1">//Check if user 2's answer was equal to the correct answer</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is user 2 right?"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Is user 1 right?
+false
+Is user 2 right?
+true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also compare some values and see if they are greater or less than.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">user1Score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">user2Score</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">targetScore</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+
+<span class="c1">//Check if user 1 reached target score</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Did user 1 reach the target score?"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user1Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">);</span>
+
+<span class="c1">//Check if user 2 reached target score</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Did user 2 reach the target score?"</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">user2Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Did user 1 reach the target score?
+true
+Did user 2 reach the target
+false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An IF statement utilizes boolean expressions and DOES SOMETHING if the expression is true. For example we can use this on the previos two examples</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">correctAnswer</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user1Answer</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user2Answer</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+<span class="c1">//Check if user 1's answer was equal to the correct answeer</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 is right"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Check if user 2's answer was equal to the correct answer</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 is right"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>User 2 is right
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">user1Score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">user2Score</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">targetScore</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+
+<span class="c1">//Check if user 1 reached target score</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 reached the target score"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Check if user 2 reached target score</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user2Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 reached the target score"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>User 1 reached the target score
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, going further what if we wanted to complete some action if the user DID NOT reach the target score. In this case we can use an ELSE statement.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">user1Score</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">user2Score</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">targetScore</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+
+<span class="c1">//Check if user 1 reached target score</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 reached the target score"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 failed"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Check if user 2 reached target score</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user2Score</span> <span class="o">&gt;=</span> <span class="n">targetScore</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 reached the target score"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 failed"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>User 1 reached the target score
+User 2 failed
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, let's say that we want to give the points to answers, but there are different points for each answer choice. This would cause us to chain if logic, which is where we can use an ELSE IF statement.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">user1AnswerChoice</span> <span class="o">=</span> <span class="sc">'C'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user2AnswerChoice</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+<span class="kt">char</span> <span class="n">reallyCorrectAnswer</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">correctAnswer</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">partiallyCorrectAnswer</span> <span class="o">=</span> <span class="sc">'C'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">reallyWrongAnswer</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="n">user1Points</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">user2Points</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// process user 1's answer</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1AnswerChoice</span> <span class="o">==</span> <span class="n">reallyCorrectAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// really correct answer is 30 points</span>
+  <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user1AnswerChoice</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// correct answer is 20 points</span>
+  <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user1AnswerChoice</span> <span class="o">==</span> <span class="n">partiallyCorrectAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// partially correct answer is 10 points</span>
+  <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user1AnswerChoice</span> <span class="o">==</span> <span class="n">reallyWrongAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// a really wrong answer loses 10 points</span>
+  <span class="n">user1Points</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// 1 point for trying and not choosing the really wrong answer</span>
+  <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//process user 2's answer</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user2AnswerChoice</span> <span class="o">==</span> <span class="n">reallyCorrectAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// really correct answer is 30 points</span>
+  <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user2AnswerChoice</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// correct answer is 20 points</span>
+  <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user2AnswerChoice</span> <span class="o">==</span> <span class="n">partiallyCorrectAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// partially correct answer is 10 points</span>
+  <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">user2AnswerChoice</span> <span class="o">==</span> <span class="n">reallyWrongAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// a really wrong answer loses 10 points</span>
+  <span class="n">user2Points</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// 1 point for trying and not choosing the really wrong answer</span>
+  <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 has "</span> <span class="o">+</span> <span class="n">user1Points</span> <span class="o">+</span> <span class="s">" points."</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 has "</span> <span class="o">+</span> <span class="n">user2Points</span> <span class="o">+</span> <span class="s">" points."</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>User 1 has 10 points.
+User 2 has -10 points.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this example, we see a lot of chaining with the if statements. This could be greatly simplified if we used a switch statement, which allows us to select code based on the value of a variable. See the example below the previous code transformed to switch cases.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that as shown below, the switch statement cases cannot have variables in them as they must be constant expressions.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">user1AnswerChoice</span> <span class="o">=</span> <span class="sc">'C'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user2AnswerChoice</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="n">user1Points</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">user2Points</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// process user 1's answer</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">user1AnswerChoice</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="sc">'D'</span><span class="p">:</span>
+    <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'B'</span><span class="p">:</span>
+    <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'C'</span><span class="p">:</span>
+    <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'A'</span><span class="p">:</span>
+    <span class="n">user1Points</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="p">:</span>
+    <span class="n">user1Points</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//process user 2's answer</span>
+<span class="k">switch</span> <span class="p">(</span><span class="n">user2AnswerChoice</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="sc">'D'</span><span class="p">:</span>
+    <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'B'</span><span class="p">:</span>
+    <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'C'</span><span class="p">:</span>
+    <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="sc">'A'</span><span class="p">:</span>
+    <span class="n">user2Points</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="p">:</span>
+    <span class="n">user2Points</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 1 has "</span> <span class="o">+</span> <span class="n">user1Points</span> <span class="o">+</span> <span class="s">" points."</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"User 2 has "</span> <span class="o">+</span> <span class="n">user2Points</span> <span class="o">+</span> <span class="s">" points."</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>User 1 has 10 points.
+User 2 has -10 points.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another thing to understand related to this is how to combine conditionals together using AND (&amp;&amp;) and OR (||). They mean what they say, AND returns true if both conditions is true while OR returns true if both or one of the conditions is true. See some examples below. The NOT (!) operator is also useful to flip a boolean value.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">char</span> <span class="n">correctAnswer</span> <span class="o">=</span> <span class="sc">'E'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user1Answer</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">user2Answer</span> <span class="o">=</span> <span class="sc">'E'</span><span class="p">;</span>
+
+<span class="c1">// Using AND operator</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span> <span class="o">&amp;&amp;</span> <span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Both users got it right"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Using OR operator</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span> <span class="o">||</span> <span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"At least one user got it right"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Using AND + NOT operator</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span> <span class="o">&amp;&amp;</span> <span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Both users DID NOT get it right"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Using OR operator</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">user1Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span> <span class="o">||</span> <span class="n">user2Answer</span> <span class="o">==</span> <span class="n">correctAnswer</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"NEITHER user1 nor user2 got it right"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>At least one user got it right
+Both users DID NOT get it right
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The final relevant thing to understand for if statements &amp; boolean expressions is De Morgan's Law. This is an important property that can allow you to switch your if statements with AND and OR. It states that <code>NOT (A AND B) = (NOT A) OR (NOT B)</code> and <code>NOT (A OR B) = (NOT A) AND (NOT B)</code>. To illustrate this, I will simplify the last two if statements from the previous example using De Morgan's Law.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// Using first de morgan's law (Note the use of the != operator meaning NOT EQUAL TO)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Answer</span> <span class="o">!=</span> <span class="n">correctAnswer</span> <span class="o">||</span> <span class="n">user2Answer</span> <span class="o">!=</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Both users DID NOT get it right"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Using second de morgan's law</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">user1Answer</span> <span class="o">!=</span> <span class="n">correctAnswer</span> <span class="o">&amp;&amp;</span> <span class="n">user2Answer</span> <span class="o">!=</span> <span class="n">correctAnswer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"NEITHER user1 nor user2 got it right"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Both users DID NOT get it right
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we reach the end of this lesson. Here are some "hacks" I recommend you can do to further learn these concepts:</p>
+<ul>
+<li>Create a quiz or other application that heavily utilizes if statements</li>
+<li>Code a custom application in the spring app using if statements</li>
+<li>Try to create a menu from scratch (without looking at Mr. M's code) as it is a great place to utilize switch cases</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="rjawesome/apcsa_fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/apcsa_fastpages/cb/2022/09/07/if.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/apcsa_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/apcsa_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/apcsa_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/apcsa_fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/apcsa_fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
