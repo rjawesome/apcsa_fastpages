@@ -493,9 +493,6 @@ fibonacci Sequence 30 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
     <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">cache</span><span class="o">[</span><span class="n">num</span><span class="o">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">cache</span><span class="o">[</span><span class="n">num</span><span class="o">]</span><span class="p">;</span>
     <span class="p">}</span>
@@ -506,13 +503,17 @@ fibonacci Sequence 30 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
   <span class="nd">@Override</span>
   <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">init</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="na">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">cache</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
     <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
     <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">"dynamic"</span><span class="p">;</span>
-    
+    <span class="k">this</span><span class="p">.</span><span class="na">calculateFibo</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// use generated cache to set data</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="na">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">calculateFibo</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">cache</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
     <span class="p">}</span>
+
     <span class="k">this</span><span class="p">.</span><span class="na">time</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">;</span>
   <span class="p">}</span>
 
