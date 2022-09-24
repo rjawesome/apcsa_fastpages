@@ -4,8 +4,6 @@ title: Mean
 permalink: /mean/
 ---
 
-# Mean Calculator
-
 <div id="page">
 <div id="calc">
 <div id="items">
