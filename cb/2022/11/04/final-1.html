@@ -117,13 +117,13 @@ window.onload = wrap_img;
 <a class="anchor" href="#question-15" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 15</h2>
 <p><img src="/apcsa_fastpages/images/tri1final-15.png" alt="question 15 image"></p>
 <ul>
-  <li>I thought that I and II were correct code that achieved the objective as they both had a for loop and compared adjacent elements to see if they were sorted</li>
-  <li>I did not notice that for Option II, when k = data.length-1, the if statement will check <code class="language-plaintext highlighter-rouge">data[data.length]</code> and <code class="language-plaintext highlighter-rouge">data[data.length-1]</code>
+  <li>I thought that <code class="language-plaintext highlighter-rouge">I</code> and <code class="language-plaintext highlighter-rouge">II</code> were correct code that achieved the objective as they both had a for loop and compared adjacent elements to see if they were sorted</li>
+  <li>I did not notice that for <code class="language-plaintext highlighter-rouge">II</code>, when <code class="language-plaintext highlighter-rouge">k</code> is <code class="language-plaintext highlighter-rouge">data.length-1</code>, the if statement will check <code class="language-plaintext highlighter-rouge">data[data.length]</code> and <code class="language-plaintext highlighter-rouge">data[data.length-1]</code>
     <ul>
-      <li>Since the indexes of the array range from 1..data.length-1, <code class="language-plaintext highlighter-rouge">checking data[data.length-1]</code> will throw an out of bounds exception</li>
+      <li>Since the indexes of the array range from 1..data.length-1, <code class="language-plaintext highlighter-rouge">checking data[data.length]</code> will throw an out of bounds exception</li>
     </ul>
   </li>
-  <li>This means only I was correct and therefore answer choice <code class="language-plaintext highlighter-rouge">A</code> was correct</li>
+  <li>This means only <code class="language-plaintext highlighter-rouge">I</code> was correct and therefore answer choice <code class="language-plaintext highlighter-rouge">A</code> was correct</li>
 </ul>
 
 <h2 id="question-26">
@@ -131,9 +131,9 @@ window.onload = wrap_img;
 <p><img src="/apcsa_fastpages/images/tri1final-26.png" alt="question 26 image"></p>
 <ul>
   <li>I thought that <code class="language-plaintext highlighter-rouge">C</code> was correct because it correctly used an enhanced for loop to traverse the array and checked if the element was odd correctly</li>
-  <li>The mistake with this answer choice was that it printed <code class="language-plaintext highlighter-rouge">arr[x]</code> utilizing x as an index
+  <li>The mistake with this answer choice was that it printed <code class="language-plaintext highlighter-rouge">arr[x]</code> utilizing <code class="language-plaintext highlighter-rouge">x</code> as an index
     <ul>
-      <li>This is incorrect since in an enhanced for loop, x actually represents the value in the array</li>
+      <li>This is incorrect since in an enhanced for loop, <code class="language-plaintext highlighter-rouge">x</code> actually represents the value in the array rather than an index</li>
     </ul>
   </li>
   <li>This means the correct answer choice was <code class="language-plaintext highlighter-rouge">A</code> which was identical to <code class="language-plaintext highlighter-rouge">C</code> but replaced <code class="language-plaintext highlighter-rouge">arr[x]</code> with <code class="language-plaintext highlighter-rouge">x</code>
