@@ -140,19 +140,7 @@ window.onload = wrap_img;
   <li>Booleans can be generated using comparison expressions (equal/==, greater than/&gt;, less than/&lt;, etc.)</li>
   <li>If statements take in a boolean or boolean expression and run if the expression evaluates to “true”</li>
   <li>Else &amp; Else if statements can be used in conjunction with if statements to run code if the if statement evaluates to false</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>De Morgan’s Law: !(a &amp;&amp; b) = !a</td>
-          <td> </td>
-          <td>!b AND !(a</td>
-          <td> </td>
-          <td>b) = !a &amp;&amp; !b (ie. distribute and switch the middle sign)</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+  <li>De Morgan’s Law: <code class="language-plaintext highlighter-rouge">!(a &amp;&amp; b) = !a || !b</code> AND <code class="language-plaintext highlighter-rouge">!(a || b) = !a &amp;&amp; !b</code> (ie. distribute and switch the middle sign)</li>
   <li>
 <a href="https://kinerboi.github.io/myFirstRepopart2/2022/10/24/Unit3.html">Homework</a>
     <h2 id="unit-4-iteration">
