@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Units 1-5 Jupyter Notebooks | Rohan J’s Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Units 1-5 Jupyter Notebooks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and code on units 1-5" />
+<meta property="og:description" content="Notes and code on units 1-5" />
+<link rel="canonical" href="https://rjawesome.github.io/apcsa_fastpages/cb/2022/11/28/units15.html" />
+<meta property="og:url" content="https://rjawesome.github.io/apcsa_fastpages/cb/2022/11/28/units15.html" />
+<meta property="og:site_name" content="Rohan J’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-28T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Units 1-5 Jupyter Notebooks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-28T00:00:00-06:00","datePublished":"2022-11-28T00:00:00-06:00","description":"Notes and code on units 1-5","headline":"Units 1-5 Jupyter Notebooks","mainEntityOfPage":{"@type":"WebPage","@id":"https://rjawesome.github.io/apcsa_fastpages/cb/2022/11/28/units15.html"},"url":"https://rjawesome.github.io/apcsa_fastpages/cb/2022/11/28/units15.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/apcsa_fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://rjawesome.github.io/apcsa_fastpages/feed.xml" title="Rohan J's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/apcsa_fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/apcsa_fastpages/">Rohan J&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/apcsa_fastpages/search/">Search</a><a class="page-link" href="/apcsa_fastpages/categories/">Tags</a><a class="page-link" href="/apcsa_fastpages/vocab/">Vocab</a><a class="page-link" href="/apcsa_fastpages/about/">About Me</a><a class="page-link" href="/apcsa_fastpages/todo/">Todo</a><a class="page-link" href="/apcsa_fastpages/mean/">Mean</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Units 1-5 Jupyter Notebooks</h1><p class="page-description">Notes and code on units 1-5</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-28T00:00:00-06:00" itemprop="datePublished">
+        Nov 28, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/apcsa_fastpages/categories/#cb">cb</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/rjawesome/apcsa_fastpages/tree/master/_notebooks/2022-11-28-units15.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/rjawesome/apcsa_fastpages/master?filepath=_notebooks%2F2022-11-28-units15.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/rjawesome/apcsa_fastpages/blob/master/_notebooks/2022-11-28-units15.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Frjawesome%2Fapcsa_fastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-11-28-units15.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/apcsa_fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-28-units15.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-1:-Primitives-(our-lesson)">Unit 1: Primitives (our lesson)<a class="anchor-link" href="#Unit-1:-Primitives-(our-lesson)"> </a></h1><ul>
+<li>Two main types of data in java: primitives (int, boolean, char, double) and objects (Strings, other classes)</li>
+<li>Primitives can be compared with == while for classes it is necessary to use the .equals() method</li>
+<li>Primitives do not have methods and properties while these are present in classes (ie. String length() method)</li>
+<li>Homework N/A since we presented this unit</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Casting-(Division/Rounding)">Casting (Division/Rounding)<a class="anchor-link" href="#Casting-(Division/Rounding)"> </a></h2><ul>
+<li>In order to do division with numbers, casting to double is necessary</li>
+<li>When casting is done from double to integer, the number is ALWAYS rounded down (truncated)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// Without casting (rounds down to 2)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// With casting to double (gives correct answer of 2.5)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">b</span><span class="p">);</span>
+
+<span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">6.7</span><span class="p">;</span>
+
+<span class="c1">// Without casting (shows full decimal)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+
+<span class="c1">// WIth casting to integer (rounds down to 6)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">c</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+2.5
+6.7
+6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Wrapper-Classes,-why-wrap-int,-double.">Wrapper Classes, why wrap int, double.<a class="anchor-link" href="#Wrapper-Classes,-why-wrap-int,-double."> </a></h2><p>Wrapper classes are used to convert primitives in a class, necessary for types which use generic (ex. ArrayList)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+
+<span class="c1">// DOES NOT WORK: unexpected type (because primitive)</span>
+<span class="c1">// ArrayList&lt;int&gt; list = new ArrayList&lt;int&gt;();</span>
+
+<span class="c1">// Using &quot;Integer&quot; wrapper class</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// Creating &quot;Integer&quot; from int</span>
+<span class="n">Integer</span> <span class="n">a_wrap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a_wrap</span><span class="p">);</span>
+
+<span class="c1">// Using java to automatically cast int to Integer</span>
+<span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+
+<span class="c1">// Both elements are there</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[6, 6]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-2:-Using-Objects">Unit 2: Using Objects<a class="anchor-link" href="#Unit-2:-Using-Objects"> </a></h1><ul>
+<li>Objects are just an instance created out of a class created w/ a constructor (which takes in parameters describing the object</li>
+<li>Methods in objects can be void (returns nothing) or have a return type specified</li>
+<li>Static methods and properties are tied to class rather than object (ie. same value for all objects)</li>
+<li>Methods can be overloaded (have different sets of parameters) as long as order of types differs between method definitions even with same name</li>
+<li><a href="https://rohanj.dev/apcsa_fastpages/2022/10/23/unit-2.html">Homework</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Concatenation">Concatenation<a class="anchor-link" href="#Concatenation"> </a></h2><ul>
+<li>Allows you to combine strings together using + sign</li>
+<li>If string is added to a non string type, the toString method is used, or for primitives it is automatically converted to string</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CoolClass</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;a cool class&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;a string&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot; and another string &quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">CoolClass</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoolClass</span><span class="p">();</span>
+
+<span class="c1">// Adding two strings together</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// Adding string and primitive (integer);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
+
+<span class="c1">// Adding string and other object (uses toString)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a string and another string 
+a string and another string 10
+a string and another string a cool class
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Math-class">Math class<a class="anchor-link" href="#Math-class"> </a></h2><ul>
+<li>Math class is useful for many mathematical operations such as square root and power</li>
+<li>Also useful for random numnber generation, Math.random gives number 0-1 which can be scaled to any set of numbers (see below code)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// random number from 1-n</span>
+
+<span class="c1">// 10 random numbers</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">random_number</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// cast to int ensures resulting output is whole number</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">random_number</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10
+1
+10
+6
+2
+5
+1
+6
+8
+10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comparing-Numbers/Strings/Objects">Comparing Numbers/Strings/Objects<a class="anchor-link" href="#Comparing-Numbers/Strings/Objects"> </a></h2><ul>
+<li>Numbers can be compared using the "==" operator</li>
+<li>Objects such as strings must be compared using ".equals()" rather than "==" operator<ul>
+<li>The "==" operator comapres the memory location rather than contents of object</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// Comparing two same numbers</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// Comparing two different numbers</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="p">);</span>
+
+<span class="n">String</span> <span class="n">as</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;crazy&quot;</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">bs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;crazy&quot;</span><span class="p">);</span>
+
+<span class="c1">// Comparing the same string to itself (SAME memory location)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">as</span> <span class="o">==</span> <span class="n">as</span><span class="p">);</span>
+
+<span class="c1">// Comparing strings with same content using wrong operator (DIFFERENT memory location)</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">as</span> <span class="o">==</span> <span class="n">bs</span><span class="p">);</span>
+
+<span class="c1">// Comparing strings with same content using correct .equals()</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">as</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">bs</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>true
+false
+true
+false
+true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-3:-Booleans/If-statement">Unit 3: Booleans/If statement<a class="anchor-link" href="#Unit-3:-Booleans/If-statement"> </a></h1><ul>
+<li>Booleans store a true/false value (can only be one of these)</li>
+<li>Booleans can be generated using comparison expressions (equal/==, greater than/&gt;, less than/&lt;, etc.)</li>
+<li>If statements take in a boolean or boolean expression and run if the expression evaluates to "true"</li>
+<li>Else &amp; Else if statements can be used in conjunction with if statements to run code if the if statement evaluates to false</li>
+<li><a href="https://kinerboi.github.io/myFirstRepopart2/2022/10/24/Unit3.html">Homework</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Compound-Boolean-Expression">Compound Boolean Expression<a class="anchor-link" href="#Compound-Boolean-Expression"> </a></h2><ul>
+<li>Using combinations of boolean operators, you can make compound boolean expressions</li>
+<li>Operators that can be used include and (&amp;&amp;), or (||), not (!), as well as parenthesis for grouping purposes</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">boolean</span> <span class="n">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// Creating a compound expression</span>
+<span class="kt">boolean</span> <span class="n">compound</span> <span class="o">=</span> <span class="o">!</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">b</span> <span class="o">||</span> <span class="n">a</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">a</span><span class="p">);</span>
+
+<span class="c1">// Printing the result</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">compound</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Truth-Tables">Truth Tables<a class="anchor-link" href="#Truth-Tables"> </a></h2><ul>
+<li>Can be used to see the values of boolean expressions</li>
+<li>For example, below is truth tables for and/or
+### AND
+X | 0 | 1 |<br />
+0 | 0 | 0 |<br />
+1 | 0 | 1 |<br />
+### OR
+X | 0 | 1 |<br />
+0 | 0 | 1 |<br />
+1 | 1 | 1 |<br /></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="De-Morgan's-Law">De Morgan's Law<a class="anchor-link" href="#De-Morgan's-Law"> </a></h2><ul>
+<li>Useful for simplifying boolean expresison</li>
+<li>States that <code>!(a &amp;&amp; b) = !a || !b</code> AND <code>!(a || b) = !a &amp;&amp; !b</code> (ie. distribute and switch the middle sign) </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">boolean</span> <span class="n">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">c</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// complicated boolean expression</span>
+<span class="kt">boolean</span> <span class="n">res1</span> <span class="o">=</span> <span class="o">!</span><span class="p">((</span><span class="o">!</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span><span class="p">))</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">a</span> <span class="o">||</span> <span class="n">b</span><span class="p">)));</span>
+
+<span class="c1">// simplified using De Morgan&#39;s Law once</span>
+<span class="kt">boolean</span> <span class="n">res2</span> <span class="o">=</span> <span class="o">!</span><span class="p">((</span><span class="o">!</span><span class="n">a</span> <span class="o">||</span> <span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">b</span><span class="p">));</span>
+
+<span class="c1">//simplified using De Morgan&#39;s Law twice</span>
+<span class="kt">boolean</span> <span class="n">res3</span> <span class="o">=</span> <span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="n">a</span> <span class="o">||</span> <span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// all results are the same</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">res1</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">res2</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">res3</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>false false false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-4:-Iteration">Unit 4: Iteration<a class="anchor-link" href="#Unit-4:-Iteration"> </a></h1><ul>
+<li>While loop runs while a boolean condition is true (be careful with infinite loops!)</li>
+<li>For loops create a variable which is modified on every loop iteration and has an end condition (useful for iterating through arrays, especially in different ways based on the modification, ie. i += 2 for all even indexes)</li>
+<li>For &amp; while loops can be nested inside each other to achieve more iteration (really useful with 2D arrays)</li>
+<li>For each/Enhanced for loops really useful for looping through an array (int val : array) but limited in that they go through all elements from first to last and that cannot be modified</li>
+<li><a href="https://rohanj.dev/apcsa_fastpages/2022/10/23/caesar.html">Homework</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-loop/Enhanced-for-loop">For loop/Enhanced for loop<a class="anchor-link" href="#For-loop/Enhanced-for-loop"> </a></h2><ul>
+<li>For loops can be used to iterate through an index, and modify it in different ways in the for loop declaration</li>
+<li>The enhanced for loop is exclusively used for iterating fully through an iterable (such as array)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// looping through even numbers</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+
+<span class="c1">// looping through array with conventional for lopo</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// looping through array with enhanced for loop</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">:</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+2
+4
+6
+8
+1
+2
+3
+7
+8
+1
+2
+3
+7
+8
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="While-loop-versus-Do-While-loop">While loop versus Do While loop<a class="anchor-link" href="#While-loop-versus-Do-While-loop"> </a></h2><ul>
+<li>While loops run while a condition is true, the condition is checked before each iteration of the code is run</li>
+<li>Do while loops also run while a condition is true, but the condition is checked AFTER each iteration of the code is run<ul>
+<li>This means that no matter what the do block runs at least once before the condition is checked</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">falseBool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// printing even numbers with while loop</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// if condition is false while loop does not run at all</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">falseBool</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;inside while loop&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// if condition is false in do while, the loop runs once</span>
+<span class="k">do</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;inside do-while loop&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">falseBool</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+2
+4
+6
+8
+inside do-while loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="nested-Loops">nested Loops<a class="anchor-link" href="#nested-Loops"> </a></h2><ul>
+<li>Loops can be used inside each other for better iteration</li>
+<li>Especially useful for 2D arrays</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span>
+  <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// using nested for loops for 2D array</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 2 3 
+2 3 4 
+4 5 6 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-5:-Writing-Classes">Unit 5: Writing Classes<a class="anchor-link" href="#Unit-5:-Writing-Classes"> </a></h1><ul>
+<li>Classes can be used for creating objects and have two main things: properties and methods</li>
+<li>Properties are used to store information about each object of a class (can be made private/public which determines accessibility outside of class)</li>
+<li>Methods are used to modify the object &amp; do things</li>
+<li>Getter and Setter Methods can be used to modify properties of a class which are made private</li>
+<li><a href="https://kinerboi.github.io/myFirstRepopart2/2022/10/20/Class.html">Homework</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Creating-a-Class,-describe-Naming-Conventions">Creating a Class, describe Naming Conventions<a class="anchor-link" href="#Creating-a-Class,-describe-Naming-Conventions"> </a></h2><ul>
+<li>Class can be created using the class keyword</li>
+<li>Class should be defined using upper camelcase (camelcase but first letter capital)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// creating a class</span>
+<span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Main-Method">Main Method<a class="anchor-link" href="#Main-Method"> </a></h2><ul>
+<li>The main method is used to test a class, is automatically called when class ran</li>
+<li>Usually creates an object and can test methods</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="c1">// main method</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MyClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="This-keyword">This keyword<a class="anchor-link" href="#This-keyword"> </a></h2><ul>
+<li>The "this" keyword allows you to access properties of the class</li>
+<li>See constructor example to see use of this keyword</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Constructor">Constructor<a class="anchor-link" href="#Constructor"> </a></h2><ul>
+<li>Constructor is called whenver the object is created, usually initializes fields</li>
+<li>Does not return anything because the object is automatically given to the user when constructor is called</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">prop1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">prop2</span><span class="p">;</span>
+
+  <span class="c1">// Constructor here</span>
+  <span class="kd">public</span> <span class="nf">MyClass</span> <span class="p">(</span><span class="kt">int</span> <span class="n">prop1input</span><span class="p">,</span> <span class="kt">int</span> <span class="n">prop2input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// setting properties using this to reference prop1 &amp; prop2 of the object</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">prop1input</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop2</span> <span class="o">=</span> <span class="n">prop2input</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MyClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Accessor/Getter-methods">Accessor/Getter methods<a class="anchor-link" href="#Accessor/Getter-methods"> </a></h2><ul>
+<li>Used to get properties of an object from the outside the class definition</li>
+<li>Getters can be applied on only the properties which should be accessed outside the class</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">prop1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">prop2</span><span class="p">;</span>
+
+  <span class="c1">// Constructor here</span>
+  <span class="kd">public</span> <span class="nf">MyClass</span> <span class="p">(</span><span class="kt">int</span> <span class="n">prop1input</span><span class="p">,</span> <span class="kt">int</span> <span class="n">prop2input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// setting properties using this to reference prop1 &amp; prop2 of the object</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">prop1input</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop2</span> <span class="o">=</span> <span class="n">prop2input</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// getter allows outside class to access prop1</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getProp1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">prop1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MyClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// using getter to access prop1</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">getProp1</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Mutator/setter-methods">Mutator/setter methods<a class="anchor-link" href="#Mutator/setter-methods"> </a></h2><ul>
+<li>These methods allow the properties which should be modifiable to be chagned outside the class definition</li>
+<li>These methods have a "void" return type since they don't need to return anything, since they are only setting values</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">prop1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">prop2</span><span class="p">;</span>
+
+  <span class="c1">// Constructor here</span>
+  <span class="kd">public</span> <span class="nf">MyClass</span> <span class="p">(</span><span class="kt">int</span> <span class="n">prop1input</span><span class="p">,</span> <span class="kt">int</span> <span class="n">prop2input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// setting properties using this to reference prop1 &amp; prop2 of the object</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">prop1input</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop2</span> <span class="o">=</span> <span class="n">prop2input</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// getter allows outside class to access prop1</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getProp1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">prop1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// setter allows outside class to set prop1</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setProp1</span> <span class="p">(</span><span class="kt">int</span> <span class="n">propVal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">propVal</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MyClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// using getter to access prop1</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">getProp1</span><span class="p">());</span>
+
+    <span class="c1">// changing value of prop1</span>
+    <span class="n">obj</span><span class="p">.</span><span class="na">setProp1</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+    <span class="c1">// using getter to access new value of prop1</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">getProp1</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Access-modifiers">Access modifiers<a class="anchor-link" href="#Access-modifiers"> </a></h2><ul>
+<li>Access modifiers control whether properties and methods can be accessed outside the class</li>
+<li>The public means the property/method is accessible outside while if it is private it is not accessible</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="c1">// prop1 cannot be directly accessed</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">prop1</span><span class="p">;</span>
+
+  <span class="c1">// prop2 can be directly accessed</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="n">prop2</span><span class="p">;</span>
+
+  <span class="c1">// Constructor here</span>
+  <span class="kd">public</span> <span class="nf">MyClass</span> <span class="p">(</span><span class="kt">int</span> <span class="n">prop1input</span><span class="p">,</span> <span class="kt">int</span> <span class="n">prop2input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// setting properties using this to reference prop1 &amp; prop2 of the object</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">prop1input</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop2</span> <span class="o">=</span> <span class="n">prop2input</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// getter allows outside class to access prop1</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getProp1</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">prop1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// setter allows outside class to set prop1</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setProp1</span> <span class="p">(</span><span class="kt">int</span> <span class="n">propVal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prop1</span> <span class="o">=</span> <span class="n">propVal</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MyClass</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// would throw error</span>
+    <span class="c1">// obj.prop1 = 10;</span>
+
+    <span class="c1">// works (because public)</span>
+    <span class="n">obj</span><span class="p">.</span><span class="na">prop2</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="na">prop2</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>11
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Static-methods/properties">Static methods/properties<a class="anchor-link" href="#Static-methods/properties"> </a></h2><ul>
+<li>Static properties and methods are part of the class rather than each object</li>
+<li>Static methods do not require an object, and static properties only have one instance that is the same for all objects</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
+  <span class="c1">// static method</span>
+  <span class="kd">static</span> <span class="n">String</span> <span class="nf">coolMethod</span> <span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; cool&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// static property</span>
+  <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticProp</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// no object needed for any of this</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">coolMethod</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">));</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">staticProp</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MyClass</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>test cool
+10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/apcsa_fastpages/cb/2022/11/28/units15.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/apcsa_fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/apcsa_fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/apcsa_fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
