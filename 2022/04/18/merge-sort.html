@@ -1,0 +1,76 @@
+
+<hr />
+<p>toc: true
+layout: post
+description: Merge Sort Hacks
+categories: [cb]
+title: Merge Sort
+—</p>
+<h1 id="hack-12-works-with-any-comparable-type">Hack 1/2 (works with any comparable type)</h1>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">MergeSort</span><span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">l</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// find midpoint</span>
+            <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="o">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+    
+            <span class="c1">// sort top and bottom half</span>
+            <span class="n">sort</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">l</span><span class="o">,</span> <span class="n">m</span><span class="o">);</span>
+            <span class="n">sort</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
+    
+            <span class="c1">// merge the two sub arrays</span>
+            <span class="n">merge</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">l</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">merge</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">l</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// Find the sizes of two subarrays to be merged</span>
+        <span class="kt">int</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">m</span><span class="o">;</span>
+
+        <span class="cm">/* Create temp arrays */</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">L</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;(</span><span class="n">n1</span><span class="o">);</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">R</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;(</span><span class="n">n2</span><span class="o">);</span>
+
+        <span class="cm">/* Copy data to temp arrays */</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+            <span class="no">L</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">i</span><span class="o">));</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span>
+            <span class="no">R</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">j</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">j</span><span class="o">));</span>
+
+        <span class="cm">/* Merge the temp arrays */</span>
+
+        <span class="c1">// Initial indexes of first and second subarrays</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="c1">// Initial index of merged subarray array</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="no">L</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">compareTo</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">j</span><span class="o">))</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">arr</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="no">L</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+                <span class="n">i</span><span class="o">++;</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="o">{</span>
+                <span class="n">arr</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="no">R</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+                <span class="n">j</span><span class="o">++;</span>
+            <span class="o">}</span>
+            <span class="n">k</span><span class="o">++;</span>
+        <span class="o">}</span>
+
+        <span class="cm">/* Copy remaining elements of L[] if any */</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">arr</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="no">L</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+            <span class="n">i</span><span class="o">++;</span>
+            <span class="n">k</span><span class="o">++;</span>
+        <span class="o">}</span>
+
+        <span class="cm">/* Copy remaining elements of R[] if any */</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">arr</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="no">R</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">j</span><span class="o">));</span>
+            <span class="n">j</span><span class="o">++;</span>
+            <span class="n">k</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
