@@ -2,10 +2,11 @@
 toc: true
 layout: post
 description: Binary Search Hacks
-categories: [setup]
+categories: [cb]
 title: Binary Search
 ---
-# Hack 1/2
+
+## Hack 1/2
 ```java
 
 public class BinarySearch {

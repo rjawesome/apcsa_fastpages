@@ -7,7 +7,8 @@ description: Merge Sort Hacks
 categories: [cb]
 title: Merge Sort
 ---
-# Hack 1/2 (works with any comparable type)
+
+## Hack 1/2 (works with any comparable type)
 ```java
 class MergeSort<T extends Comparable<T>> {
     public void sort(List<T> arr, int l, int r)
