@@ -192,7 +192,8 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Traversing-an-Array">Traversing an Array<a class="anchor-link" href="#Traversing-an-Array"> </a></h3><p>Common ways to traverse an array include for loops and while loops.</p>
+<h3 id="Traversing-an-Array">Traversing an Array<a class="anchor-link" href="#Traversing-an-Array"> </a></h3><p>Common ways to traverse an array include for loops and enhanced for loops<br />
+Note: For enhanced for loops you cannot access the index, only the value<br /></p>
 
 </div>
 </div>
@@ -212,15 +213,14 @@ window.onload = wrap_img;
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr1</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="c1">// Print array element present at index i</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
 
 <span class="p">}</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
 
 <span class="c1">// NOTE: You may also use an enhanced for loop</span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">:</span> <span class="n">arr1</span><span class="p">){</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">:</span> <span class="n">arr1</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -234,7 +234,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0 6 8 2 
+<pre>0 0
+1 6
+2 8
+3 2
 0
 6
 8
