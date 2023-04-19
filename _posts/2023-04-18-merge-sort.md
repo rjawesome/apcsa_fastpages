@@ -1,5 +1,3 @@
-
-
 ---
 toc: true
 layout: post
