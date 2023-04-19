@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -192,8 +192,11 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Traversing-an-Array">Traversing an Array<a class="anchor-link" href="#Traversing-an-Array"> </a></h3><p>Common ways to traverse an array include for loops and enhanced for loops<br />
-Note: For enhanced for loops you cannot access the index, only the value<br /></p>
+<h3 id="Traversing-an-Array">Traversing an Array<a class="anchor-link" href="#Traversing-an-Array"> </a></h3><p>Common ways to traverse an array include for loops and enhanced for loops:</p>
+<ul>
+<li>A for loop allows you to access the index, and manipulations can be done by changing the incrementer (ie. i+=2 instead of i++)</li>
+<li>An enhanced for loop is simpler but you CANNOT access the index, only the value</li>
+</ul>
 
 </div>
 </div>
@@ -373,6 +376,13 @@ Note: For enhanced for loops you cannot access the index, only the value<br /></
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Generally, when you are coding algorithms using arrays you will probably use some traversal element. The key thing to think about is what you want to do for each element, because once you have a repeatable action you can just put it in a for loop. You also want to consider which elements you actually want to look at beacuse in some causes you may want to skip some elements.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Think?:-What-should-be-changed-in-the-code-above-to-find-the-minimum?">Think?: What should be changed in the code above to find the minimum?<a class="anchor-link" href="#Think?:-What-should-be-changed-in-the-code-above-to-find-the-minimum?"> </a></h2>
 </div>
 </div>
@@ -486,6 +496,40 @@ Note: For enhanced for loops you cannot access the index, only the value<br /></
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The 2D array is useful to represent a matrix as well, which then can be accessed by the rows and columns. This is a good way to visualize a 2d array. Here, I will show an example of how a "grid" looks like + initialization</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// GRID of our array</span>
+<span class="c1">// 4 5 6</span>
+<span class="c1">// 7 8 9</span>
+<span class="c1">// 1 2 3</span>
+
+<span class="c1">// Initializing our array</span>
+<span class="kt">int</span><span class="o">[][]</span> <span class="n">twoDArray</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span>
+    <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Traversing-2-D-Arrays">Traversing 2-D Arrays<a class="anchor-link" href="#Traversing-2-D-Arrays"> </a></h3><p>2-D arrays are traversed similarly to arrays in that you will primarily use for and while loops. However, since there are both rows and columns now, you will need to use nested for loops or nested enhanced for loops.</p>
 
 </div>
@@ -502,11 +546,15 @@ Note: For enhanced for loops you cannot access the index, only the value<br /></
 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print2D</span><span class="p">(</span><span class="kt">int</span> <span class="n">mat</span><span class="o">[][]</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// For each row of the array (goes one array at a time)</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">twoDArray1</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">twoDArray1</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
  
             <span class="c1">//Goes through each element of the array</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">column</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">column</span> <span class="o">&lt;</span> <span class="n">twoDArray1</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">column</span><span class="o">++</span><span class="p">)</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">mat</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+
+            <span class="c1">// runs for every row (not every element)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="kt">int</span> <span class="n">twoDArray1</span><span class="o">[][]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">},</span>
@@ -526,7 +574,10 @@ Note: For enhanced for loops you cannot access the index, only the value<br /></
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1 2 3 4 6 7 8 9 10 </pre>
+<pre>1 2 3 
+4 6 7 
+8 9 10 
+</pre>
 </div>
 </div>
 
@@ -541,6 +592,13 @@ Note: For enhanced for loops you cannot access the index, only the value<br /></
 <p>When traversing 2-D arrays it is important to note wether the code is in row-major or column-major order. This basically indicates what the outer for loop of the method is traversing.</p>
 <p>If the outer loop is going by column, its in column major order. If the outer loop is going by row, its in row-major order.</p>
 <p>The code example above is in row-major order</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When you are traversing, again make sure to consider the pros/cons of for vs enhanced for loop (for loop allows you to mess with index). This can be useful to again think about which elements you actually want to take actions on. Furthermore, you may also consider actions that you only want to do for every row, or every column. This could be opposed to every element, in which case you would put it in the outer for loop (see the <code>System.out.println()</code> in above code)</p>
 
 </div>
 </div>
