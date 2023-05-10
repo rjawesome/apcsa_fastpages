@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      6 min read
     
 </span></p>
 
@@ -106,6 +106,18 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#frq-2">FRQ 2</a></li>
+<li class="toc-entry toc-h2"><a href="#frq-3">FRQ 3</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#frq-3a">FRQ 3a</a></li>
+<li class="toc-entry toc-h3"><a href="#frq-3b">FRQ 3b</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#frq-4">FRQ 4</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#frq-4a">FRQ 4a</a></li>
+<li class="toc-entry toc-h3"><a href="#frq-4b">FRQ 4b</a></li>
+</ul>
+</li>
 </ul><h2 id="frq-1">
 <a class="anchor" href="#frq-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 1</h2>
 <ul>
@@ -240,6 +252,137 @@ window.onload = wrap_img;
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+
+<h2 id="frq-3">
+<a class="anchor" href="#frq-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 3</h2>
+<ul>
+  <li>This FRQ requires you to analyze weather data from the WeatherData class</li>
+  <li>The ArrayList called temperatures stores the temperatures for the different days and all temperatures are doubles</li>
+</ul>
+
+<h3 id="frq-3a">
+<a class="anchor" href="#frq-3a" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 3a</h3>
+<ul>
+  <li>You have to write a method <code class="language-plaintext highlighter-rouge">cleanData</code> that modifiers the <code class="language-plaintext highlighter-rouge">temperatures</code> instance variable and removes all temperatures that are less than the lower parameter OR greater than the upper parameter</li>
+  <li>Examples given by CollegeBoard
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">cleanData</span><span class="o">(</span><span class="kt">double</span> <span class="n">lower</span><span class="o">,</span> <span class="kt">double</span> <span class="n">upper</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Iterates through each element in the temperatures</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">temperatures</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="c1">// Checks if the temperature is outside the boundaries</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">temperatures</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">upper</span> <span class="o">||</span> <span class="n">temperatures</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="o">)</span> <span class="o">{</span>
+          <span class="c1">// Remove the element from temperatures</span>
+          <span class="n">temperatures</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+          <span class="c1">// Goes back one index to avoid off by one error</span>
+          <span class="n">i</span><span class="o">--;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="frq-3b">
+<a class="anchor" href="#frq-3b" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 3b</h3>
+<ul>
+  <li>You now have to write the method <code class="language-plaintext highlighter-rouge">longestHeatWave</code> to find the length of the longest heat wave</li>
+  <li>A heat wave is a set of consecutive days that have temperatures which exceed the threshold</li>
+  <li>Examples given by CollegeBoard
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">longestHeatWave</span><span class="o">(</span><span class="kt">double</span> <span class="n">threshold</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Creates variables for current heatwave length and maximum heatwave length</span>
+  <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="c1">// Iterates through each element in temperatures</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">temperatures</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="c1">// If the temperature is greater than the threshold</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">temperatures</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="o">)</span> <span class="o">{</span>
+          <span class="c1">// Add one to the current heatwave length</span>
+          <span class="n">current</span><span class="o">++;</span>
+          <span class="c1">// If the length of the current heatwave is greater than the maximum heatwave, set the current heatwave to the maximum value</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">current</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">max</span> <span class="o">=</span> <span class="n">current</span><span class="o">;</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="c1">// If the temperature is less than the threshold, the heatwave has ended so set the current heatwave length to 0 </span>
+      <span class="k">else</span> <span class="o">{</span>
+          <span class="n">current</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="c1">// Return the length of the longest heatwave</span>
+  <span class="k">return</span> <span class="n">max</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="frq-4">
+<a class="anchor" href="#frq-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 4</h2>
+<ul>
+  <li>This FRQ gives you a 2D array where each object in the 2D array is of Candy type</li>
+  <li>You also have a method <code class="language-plaintext highlighter-rouge">getFlavor</code> which returns the flavor of a candy</li>
+  <li>Any element in the 2D array can either have a Candy or be null</li>
+</ul>
+
+<h3 id="frq-4a">
+<a class="anchor" href="#frq-4a" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 4a</h3>
+<ul>
+  <li>You have to write a method <code class="language-plaintext highlighter-rouge">moveCandyToFirstRow</code> which moves a candy to the first row in the given column if a candy doesn’t already exist there</li>
+  <li>If a candy is not present, start from the next row and check for a candy in that column to move to the first row</li>
+  <li>After the program is completed, if a candy is moved to or already in the first row, return true. If not, return false</li>
+  <li>Examples given by CollegeBoard
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">moveCandyToFirstRow</span><span class="o">(</span><span class="kt">int</span> <span class="n">col</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Checks if the first row already has a candy</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">box</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="k">else</span> <span class="o">{</span>
+      <span class="c1">// If there is no candy, check each row for a candy</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">box</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="c1">// If there is a candy in the row, move it to the first row and remove it from row i and return true</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">box</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">box</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="n">box</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">];</span>
+              <span class="n">box</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+              <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="c1">// If no candy is found in every row of the given column, return false</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="frq-4b">
+<a class="anchor" href="#frq-4b" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQ 4b</h3>
+<ul>
+  <li>You now have to write the method <code class="language-plaintext highlighter-rouge">removeNextByFlavor</code> which iterates through the 2D array starting from the bottom left. If there is a Candy that has the same flavor as the parameter <code class="language-plaintext highlighter-rouge">flavor</code>, remove that Candy and return it.</li>
+  <li>If no Candy in the 2D array has that flavor, return null.</li>
+  <li>Examples given by CollegeBoard
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">Candy</span> <span class="nf">removeNextByFlavor</span><span class="o">(</span><span class="nc">String</span> <span class="n">flavor</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Iterate through each element by starting at the bottom left </span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">row</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">row</span><span class="o">--)</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">box</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span> <span class="n">col</span><span class="o">++)</span> <span class="o">{</span>
+          <span class="c1">// Store the candy in a variable called c</span>
+          <span class="nc">Candy</span> <span class="n">c</span> <span class="o">=</span> <span class="n">box</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">];</span>
+          <span class="c1">// If a candy exists and its flavor equals the given flavor, remove the candy and return it</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="k">if</span> <span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">getFlavor</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">flavor</span><span class="o">))</span> <span class="o">{</span>
+                  <span class="n">box</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+                  <span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+              <span class="o">}</span>
+          <span class="o">}</span>  
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="c1">// If no candy has a matching flavor, return null</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
   </div><a class="u-url" href="/apcsa_fastpages/cb/2023/05/09/ap-frqs.html" hidden></a>
 </article>
